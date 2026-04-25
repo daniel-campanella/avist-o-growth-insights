@@ -11,7 +11,7 @@ export const CompetitorsCard = () => {
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-2">
           <div>
-            <CardTitle className="text-base">Top 12 Concorrentes</CardTitle>
+            <CardTitle className="text-base">Top Concorrentes</CardTitle>
             <CardDescription>
               Onde os clientes do Avistão mais gastam fora
             </CardDescription>

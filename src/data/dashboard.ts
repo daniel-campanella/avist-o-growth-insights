@@ -36,8 +36,6 @@ export const topCompetitors = [
   { name: "Supermercado Guanabara", spend: 159189.0, share: 2.63 },
   { name: "Mercado Extra", spend: 141525.54, share: 2.34 },
   { name: "Lufelana Supermercados", spend: 85589.98, share: 1.41 },
-  { name: "Supermercado Adonai", spend: 72253.76, share: 1.19 },
-  { name: "Supermercado Tinoco", spend: 69985.22, share: 1.16 },
 ];
 
 export const ageDistribution = [
