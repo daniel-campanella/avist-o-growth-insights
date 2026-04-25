@@ -61,7 +61,14 @@ export const AgeSexChart = () => {
               <Bar dataKey="Feminino" stackId="a" fill={colors.Feminino} radius={[0, 0, 0, 0]} />
               <Bar dataKey="Masculino" stackId="a" fill={colors.Masculino} />
               <Bar dataKey="Outro" stackId="a" fill={colors.Outro} />
-              <Bar dataKey="Não informado" stackId="a" fill={colors["Não informado"]} radius={[6, 6, 0, 0]} />
+              <Bar dataKey="Não informado" stackId="a" fill={colors["Não informado"]} radius={[6, 6, 0, 0]}>
+                <LabelList
+                  dataKey="totalShare"
+                  position="top"
+                  formatter={(v: number) => formatPct(v, 1)}
+                  style={{ fontSize: 11, fill: "hsl(var(--muted-foreground))", fontWeight: 500 }}
+                />
+              </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>
