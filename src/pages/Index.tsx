@@ -34,10 +34,14 @@ const Index = () => {
       </header>
 
       <main className="container mx-auto py-6 space-y-6">
-        {/* Recoverable + Share of Wallet + Competitors */}
-        <section className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        {/* Recoverable + Share of Wallet */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <RecoverablePotentialCard />
           <ShareOfWalletCard />
+        </section>
+
+        {/* Top Competitors */}
+        <section>
           <CompetitorsCard />
         </section>
 
