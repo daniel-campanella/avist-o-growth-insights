@@ -58,10 +58,37 @@ export const AgeSexChart = () => {
                 iconType="circle"
                 wrapperStyle={{ fontSize: 12, paddingTop: 8 }}
               />
-              <Bar dataKey="Feminino" stackId="a" fill={colors.Feminino} radius={[0, 0, 0, 0]} />
-              <Bar dataKey="Masculino" stackId="a" fill={colors.Masculino} />
-              <Bar dataKey="Outro" stackId="a" fill={colors.Outro} />
+              <Bar dataKey="Feminino" stackId="a" fill={colors.Feminino} radius={[0, 0, 0, 0]}>
+                <LabelList
+                  dataKey="Feminino"
+                  position="inside"
+                  formatter={(v: number) => (v >= 3 ? formatPct(v, 0) : "")}
+                  style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
+                />
+              </Bar>
+              <Bar dataKey="Masculino" stackId="a" fill={colors.Masculino}>
+                <LabelList
+                  dataKey="Masculino"
+                  position="inside"
+                  formatter={(v: number) => (v >= 3 ? formatPct(v, 0) : "")}
+                  style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
+                />
+              </Bar>
+              <Bar dataKey="Outro" stackId="a" fill={colors.Outro}>
+                <LabelList
+                  dataKey="Outro"
+                  position="inside"
+                  formatter={(v: number) => (v >= 3 ? formatPct(v, 0) : "")}
+                  style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
+                />
+              </Bar>
               <Bar dataKey="Não informado" stackId="a" fill={colors["Não informado"]} radius={[6, 6, 0, 0]}>
+                <LabelList
+                  dataKey="Não informado"
+                  position="inside"
+                  formatter={(v: number) => (v >= 3 ? formatPct(v, 0) : "")}
+                  style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
+                />
                 <LabelList
                   dataKey="totalShare"
                   position="top"

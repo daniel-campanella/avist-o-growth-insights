@@ -26,14 +26,15 @@ export const SexDonut = () => {
                 data={sexDistribution}
                 cx="50%"
                 cy="50%"
-                innerRadius={48}
-                outerRadius={72}
+                innerRadius={40}
+                outerRadius={65}
                 paddingAngle={2}
                 dataKey="value"
                 stroke="none"
-                label={({ value }: any) =>
-                  `${formatPct((value / total) * 100, 0)}`
-                }
+                label={({ value, name }: any) => {
+                  const pct = (value / total) * 100;
+                  return `${formatPct(pct, 0)}`;
+                }}
                 labelLine={false}
               >
                 {sexDistribution.map((_, i) => (
