@@ -62,7 +62,7 @@ export const AgeSexChart = () => {
                 <LabelList
                   dataKey="Feminino"
                   position="inside"
-                  formatter={(v: number) => (v > 0 ? formatPct(v, 0) : "")}
+                  formatter={(v: number) => (v >= 3 ? formatPct(v, 0) : "")}
                   style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
                 />
               </Bar>
@@ -70,7 +70,7 @@ export const AgeSexChart = () => {
                 <LabelList
                   dataKey="Masculino"
                   position="inside"
-                  formatter={(v: number) => (v > 0 ? formatPct(v, 0) : "")}
+                  formatter={(v: number) => (v >= 3 ? formatPct(v, 0) : "")}
                   style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
                 />
               </Bar>
@@ -78,7 +78,7 @@ export const AgeSexChart = () => {
                 <LabelList
                   dataKey="Outro"
                   position="inside"
-                  formatter={(v: number) => (v > 0 ? formatPct(v, 0) : "")}
+                  formatter={(v: number) => (v >= 3 ? formatPct(v, 0) : "")}
                   style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
                 />
               </Bar>
@@ -86,7 +86,7 @@ export const AgeSexChart = () => {
                 <LabelList
                   dataKey="Não informado"
                   position="inside"
-                  formatter={(v: number) => (v > 0 ? formatPct(v, 0) : "")}
+                  formatter={(v: number) => (v >= 3 ? formatPct(v, 0) : "")}
                   style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
                 />
                 <LabelList
