@@ -22,8 +22,8 @@ export const wallet = {
   shareTxns: 5.75,
 };
 
-// Recoverable potential = total spent in competitors (non-Avistão)
-export const recoverablePotential = wallet.totalSpend - wallet.avistaoSpend;
+// Recoverable potential = monthly spend of Avistão customers in competitors
+export const recoverablePotential = 302440.532;
 
 export const topCompetitors = [
   { name: "Supermercado Super Bom", spend: 521833.16, share: 8.63 },

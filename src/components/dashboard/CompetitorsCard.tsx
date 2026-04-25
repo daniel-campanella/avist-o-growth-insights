@@ -33,12 +33,12 @@ export const CompetitorsCard = () => {
                   </span>
                   <span className="font-medium truncate">{c.name}</span>
                 </div>
-                <div className="flex items-center gap-3 shrink-0">
-                  <span className="text-xs text-muted-foreground tabular-nums">
-                    {formatPct(c.share)}
-                  </span>
+                <div className="flex flex-col items-end shrink-0">
                   <span className="font-semibold tabular-nums">
                     {formatBRL(c.spend, { compact: true })}
+                  </span>
+                  <span className="text-xs text-muted-foreground tabular-nums">
+                    Share of Wallet: {formatPct(c.share)}
                   </span>
                 </div>
               </div>
