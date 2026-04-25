@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, LabelList } from "recharts";
 import { sexDistribution } from "@/data/dashboard";
 import { formatNumber, formatPct } from "@/lib/format";
 
@@ -31,6 +31,10 @@ export const SexDonut = () => {
                 paddingAngle={2}
                 dataKey="value"
                 stroke="none"
+                label={({ value }: any) =>
+                  `${formatPct((value / total) * 100, 0)}`
+                }
+                labelLine={false}
               >
                 {sexDistribution.map((_, i) => (
                   <Cell key={i} fill={COLORS[i]} />
