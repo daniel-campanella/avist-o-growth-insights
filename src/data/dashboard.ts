@@ -30,7 +30,14 @@ export const topCompetitors = [
   { name: "Hortifruti", spend: 252933.35, share: 4.18 },
   { name: "Multimarket", spend: 235676.68, share: 3.9 },
   { name: "Supermercado Mancebo", spend: 223212.36, share: 3.69 },
+  { name: "Supermarket", spend: 190543.04, share: 3.15 },
   { name: "Star Mais Supermercados", spend: 183671.68, share: 3.04 },
+  { name: "Supermercado Ancora", spend: 161194.24, share: 2.66 },
+  { name: "Supermercado Guanabara", spend: 159189.0, share: 2.63 },
+  { name: "Mercado Extra", spend: 141525.54, share: 2.34 },
+  { name: "Lufelana Supermercados", spend: 85589.98, share: 1.41 },
+  { name: "Supermercado Adonai", spend: 72253.76, share: 1.19 },
+  { name: "Supermercado Tinoco", spend: 69985.22, share: 1.16 },
 ];
 
 export const ageDistribution = [
