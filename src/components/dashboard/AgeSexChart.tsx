@@ -8,8 +8,10 @@ import {
   Tooltip,
   Legend,
   CartesianGrid,
+  LabelList,
 } from "recharts";
 import { ageSexDistribution } from "@/data/dashboard";
+import { formatPct } from "@/lib/format";
 
 const colors: Record<string, string> = {
   Feminino: "hsl(var(--chart-3))",
