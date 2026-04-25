@@ -18,15 +18,15 @@ export const ShareOfWalletCard = () => {
         </CardDescription>
       </CardHeader>
       <CardContent className="pb-5">
-        <div className="relative h-[200px]">
+        <div className="relative h-[120px]">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
                 data={data}
                 cx="50%"
                 cy="50%"
-                innerRadius={62}
-                outerRadius={88}
+                innerRadius={42}
+                outerRadius={58}
                 paddingAngle={2}
                 dataKey="value"
                 stroke="none"
@@ -37,7 +37,7 @@ export const ShareOfWalletCard = () => {
             </PieChart>
           </ResponsiveContainer>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <p className="text-3xl font-semibold text-primary">
+            <p className="text-2xl font-semibold text-primary">
               {formatPct(wallet.shareValue)}
             </p>
             <p className="text-xs text-muted-foreground mt-0.5">do gasto total</p>
