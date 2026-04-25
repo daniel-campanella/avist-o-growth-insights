@@ -1,14 +1,11 @@
-import { TrendingDown, PieChart as PieIcon, Users, ShoppingBasket, Sparkles } from "lucide-react";
-import { KpiCard } from "@/components/dashboard/KpiCard";
-import { FiltersBar } from "@/components/dashboard/FiltersBar";
+import { Sparkles } from "lucide-react";
 import { ShareOfWalletCard } from "@/components/dashboard/ShareOfWalletCard";
 import { CompetitorsCard } from "@/components/dashboard/CompetitorsCard";
 import { BaseComparisonCard } from "@/components/dashboard/BaseComparisonCard";
 import { AgeSexChart } from "@/components/dashboard/AgeSexChart";
 import { SexDonut } from "@/components/dashboard/SexDonut";
 import { LocationCard } from "@/components/dashboard/LocationCard";
-import { recoverablePotential, wallet, baseAnalysis } from "@/data/dashboard";
-import { formatBRL, formatNumber, formatPct } from "@/lib/format";
+import { RecoverablePotentialCard } from "@/components/dashboard/RecoverablePotentialCard";
 
 const Index = () => {
   return (
@@ -37,46 +34,13 @@ const Index = () => {
       </header>
 
       <main className="container mx-auto py-6 space-y-6">
-        {/* Filters */}
-        <FiltersBar />
-
-        {/* KPI Row */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <KpiCard
-            label="Potencial recuperável"
-            value={formatBRL(recoverablePotential, { compact: true })}
-            hint="Gasto mensal em concorrentes"
-            icon={<TrendingDown className="h-5 w-5" />}
-            accent="primary"
-            trend={{ value: "+12,4% vs mês anterior", positive: true }}
-          />
-          <KpiCard
-            label="Share of Wallet"
-            value={formatPct(wallet.shareValue)}
-            hint={`${formatPct(wallet.shareTxns)} das transações`}
-            icon={<PieIcon className="h-5 w-5" />}
-          />
-          <KpiCard
-            label="Total de clientes"
-            value={formatNumber(baseAnalysis.allMarkets.customers)}
-            hint={`${formatNumber(baseAnalysis.avistao.customers)} no Avistão`}
-            icon={<Users className="h-5 w-5" />}
-          />
-          <KpiCard
-            label="Ticket médio · Avistão"
-            value={formatBRL(baseAnalysis.avistao.avgTicket)}
-            hint={`Mercado total: ${formatBRL(baseAnalysis.allMarkets.avgTicket)}`}
-            icon={<ShoppingBasket className="h-5 w-5" />}
-          />
-        </section>
-
-        {/* Wallet + Competitors */}
+        {/* Recoverable + Share of Wallet + Competitors */}
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <RecoverablePotentialCard />
           <ShareOfWalletCard />
-          <div className="lg:col-span-2">
-            <CompetitorsCard />
-          </div>
+          <CompetitorsCard />
         </section>
+
 
         {/* Base Comparison */}
         <section>

@@ -100,8 +100,8 @@ const ChartTooltipContent = React.forwardRef<
       labelKey?: string;
     }
 >(
-  (
-    {
+  (props, ref) => {
+    const {
       active,
       payload,
       className,
@@ -115,9 +115,7 @@ const ChartTooltipContent = React.forwardRef<
       color,
       nameKey,
       labelKey,
-    },
-    ref,
-  ) => {
+    } = props as any;
     const { config } = useChart();
 
     const tooltipLabel = React.useMemo(() => {
@@ -234,7 +232,8 @@ const ChartLegendContent = React.forwardRef<
       hideIcon?: boolean;
       nameKey?: string;
     }
->(({ className, hideIcon = false, payload, verticalAlign = "bottom", nameKey }, ref) => {
+>((props, ref) => {
+  const { className, hideIcon = false, payload, verticalAlign = "bottom", nameKey } = props as any;
   const { config } = useChart();
 
   if (!payload?.length) {
@@ -246,7 +245,7 @@ const ChartLegendContent = React.forwardRef<
       ref={ref}
       className={cn("flex items-center justify-center gap-4", verticalAlign === "top" ? "pb-3" : "pt-3", className)}
     >
-      {payload.map((item) => {
+      {(payload as any[]).map((item: any) => {
         const key = `${nameKey || item.dataKey || "value"}`;
         const itemConfig = getPayloadConfigFromPayload(config, item, key);
 
