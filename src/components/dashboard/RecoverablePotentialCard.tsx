@@ -20,12 +20,9 @@ export const RecoverablePotentialCard = () => {
         </div>
       </CardHeader>
       <CardContent className="pb-5">
-        <div className="flex h-[200px] flex-col items-center justify-center">
+        <div className="flex h-[120px] flex-col items-center justify-center">
           <p className="text-4xl font-semibold tracking-tight text-primary">
             {formatBRL(recoverablePotential)}
-          </p>
-          <p className="text-xs text-muted-foreground mt-2">
-            Oportunidade mensal de recuperação
           </p>
         </div>
         <div className="mt-3 rounded-lg bg-accent/60 p-3 text-center">
