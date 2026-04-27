@@ -58,44 +58,38 @@ export const AgeSexChart = () => {
                 iconType="circle"
                 wrapperStyle={{ fontSize: 12, paddingTop: 8 }}
               />
-              <Bar dataKey="Feminino" stackId="a" fill={colors.Feminino} radius={[0, 0, 0, 0]}>
-                <LabelList
-                  dataKey="Feminino"
-                  position="inside"
-                  formatter={(v: number) => (v >= 3 ? formatPct(v, 0) : "")}
-                  style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
-                />
-              </Bar>
-              <Bar dataKey="Masculino" stackId="a" fill={colors.Masculino}>
-                <LabelList
-                  dataKey="Masculino"
-                  position="inside"
-                  formatter={(v: number) => (v >= 3 ? formatPct(v, 0) : "")}
-                  style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
-                />
-              </Bar>
-              <Bar dataKey="Outro" stackId="a" fill={colors.Outro}>
-                <LabelList
-                  dataKey="Outro"
-                  position="inside"
-                  formatter={(v: number) => (v >= 3 ? formatPct(v, 0) : "")}
-                  style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
-                />
-              </Bar>
-              <Bar dataKey="Não informado" stackId="a" fill={colors["Não informado"]} radius={[6, 6, 0, 0]}>
-                <LabelList
-                  dataKey="Não informado"
-                  position="inside"
-                  formatter={(v: number) => (v >= 3 ? formatPct(v, 0) : "")}
-                  style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
-                />
-                <LabelList
-                  dataKey="totalShare"
-                  position="top"
-                  formatter={(v: number) => formatPct(v, 1)}
-                  style={{ fontSize: 11, fill: "hsl(var(--muted-foreground))", fontWeight: 500 }}
-                />
-              </Bar>
+              {(["Feminino", "Masculino", "Outro", "Não informado"] as const).map((key, idx, arr) => (
+                <Bar
+                  key={key}
+                  dataKey={key}
+                  stackId="a"
+                  fill={colors[key]}
+                  radius={idx === arr.length - 1 ? [6, 6, 0, 0] : [0, 0, 0, 0]}
+                >
+                  <LabelList
+                    dataKey={key}
+                    position="inside"
+                    content={(props: any) => {
+                      const { x, y, width, height, value, index } = props;
+                      const row = ageSexDistribution[index];
+                      if (!row || !value || !row.total) return null;
+                      const pct = (value / row.total) * 100;
+                      if (pct < 6 || height < 14) return null;
+                      return (
+                        <text
+                          x={x + width / 2}
+                          y={y + height / 2}
+                          textAnchor="middle"
+                          dominantBaseline="central"
+                          style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
+                        >
+                          {formatPct(pct, 0)}
+                        </text>
+                      );
+                    }}
+                  />
+                </Bar>
+              ))}
             </BarChart>
           </ResponsiveContainer>
         </div>
