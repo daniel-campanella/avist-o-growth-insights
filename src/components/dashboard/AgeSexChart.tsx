@@ -58,38 +58,64 @@ export const AgeSexChart = () => {
                 iconType="circle"
                 wrapperStyle={{ fontSize: 12, paddingTop: 8 }}
               />
-              {(["Feminino", "Masculino", "Outro", "Não informado"] as const).map((key, idx, arr) => (
-                <Bar
-                  key={key}
-                  dataKey={key}
-                  stackId="a"
-                  fill={colors[key]}
-                  radius={idx === arr.length - 1 ? [6, 6, 0, 0] : [0, 0, 0, 0]}
-                >
-                  <LabelList
+              {(["Feminino", "Masculino", "Outro", "Não informado"] as const).map((key, idx, arr) => {
+                const isLast = idx === arr.length - 1;
+                const grandTotal = ageSexDistribution.reduce((s, r) => s + (r.total || 0), 0);
+                return (
+                  <Bar
+                    key={key}
                     dataKey={key}
-                    position="inside"
-                    content={(props: any) => {
-                      const { x, y, width, height, value, index } = props;
-                      const row = ageSexDistribution[index];
-                      if (!row || !value || !row.total) return null;
-                      const pct = (value / row.total) * 100;
-                      if (pct < 6 || height < 14) return null;
-                      return (
-                        <text
-                          x={x + width / 2}
-                          y={y + height / 2}
-                          textAnchor="middle"
-                          dominantBaseline="central"
-                          style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
-                        >
-                          {formatPct(pct, 0)}
-                        </text>
-                      );
-                    }}
-                  />
-                </Bar>
-              ))}
+                    stackId="a"
+                    fill={colors[key]}
+                    radius={isLast ? [6, 6, 0, 0] : [0, 0, 0, 0]}
+                  >
+                    <LabelList
+                      dataKey={key}
+                      position="inside"
+                      content={(props: any) => {
+                        const { x, y, width, height, value, index } = props;
+                        const row = ageSexDistribution[index];
+                        if (!row || !value || !row.total) return null;
+                        const pct = (value / row.total) * 100;
+                        if (pct < 6 || height < 14) return null;
+                        return (
+                          <text
+                            x={x + width / 2}
+                            y={y + height / 2}
+                            textAnchor="middle"
+                            dominantBaseline="central"
+                            style={{ fontSize: 10, fill: "#fff", fontWeight: 600 }}
+                          >
+                            {formatPct(pct, 0)}
+                          </text>
+                        );
+                      }}
+                    />
+                    {isLast && (
+                      <LabelList
+                        dataKey={key}
+                        position="top"
+                        content={(props: any) => {
+                          const { x, y, width, index } = props;
+                          const row = ageSexDistribution[index];
+                          if (!row || !grandTotal) return null;
+                          const pct = (row.total / grandTotal) * 100;
+                          return (
+                            <text
+                              x={x + width / 2}
+                              y={y - 6}
+                              textAnchor="middle"
+                              style={{ fontSize: 11, fill: "hsl(var(--foreground))", fontWeight: 600 }}
+                            >
+                              {formatPct(pct, 1)}
+                            </text>
+                          );
+                        }}
+                      />
+                    )}
+                  </Bar>
+                );
+              })}
             </BarChart>
           </ResponsiveContainer>
         </div>
