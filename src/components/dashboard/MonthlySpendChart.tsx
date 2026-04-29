@@ -15,9 +15,9 @@ export const MonthlySpendChart = () => {
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-2">
           <div>
-            <CardTitle className="text-base">Gasto Mensal · Avistão</CardTitle>
+            <CardTitle className="text-base">Gasto Mensal · Avistão Supermercados</CardTitle>
             <CardDescription>
-              Evolução do total gasto pelos clientes Avistão por mês
+              Evolução do total gasto pelos clientes no Avistão por mês
             </CardDescription>
           </div>
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
