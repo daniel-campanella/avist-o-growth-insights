@@ -6,6 +6,7 @@ import { AgeSexChart } from "@/components/dashboard/AgeSexChart";
 import { SexDonut } from "@/components/dashboard/SexDonut";
 import { LocationCard } from "@/components/dashboard/LocationCard";
 import { RecoverablePotentialCard } from "@/components/dashboard/RecoverablePotentialCard";
+import { MonthlySpendChart } from "@/components/dashboard/MonthlySpendChart";
 
 const Index = () => {
   return (
@@ -61,6 +62,10 @@ const Index = () => {
 
         <section>
           <LocationCard />
+        </section>
+
+        <section>
+          <MonthlySpendChart />
         </section>
 
         <footer className="pt-4 pb-8 text-center text-xs text-muted-foreground">
