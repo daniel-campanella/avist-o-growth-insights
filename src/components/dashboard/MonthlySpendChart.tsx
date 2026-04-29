@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis } from "recharts";
 import { TrendingUp } from "lucide-react";
 import { monthlySpendAvistao } from "@/data/dashboard";
 import { formatBRL } from "@/lib/format";
@@ -63,7 +63,15 @@ export const MonthlySpendChart = () => {
                 />
               }
             />
-            <Bar dataKey="total" fill="var(--color-total)" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="total" fill="var(--color-total)" radius={[4, 4, 0, 0]}>
+              <LabelList
+                dataKey="total"
+                position="top"
+                className="fill-foreground"
+                fontSize={10}
+                formatter={(v: number) => formatBRL(v, { compact: true })}
+              />
+            </Bar>
           </BarChart>
         </ChartContainer>
       </CardContent>
