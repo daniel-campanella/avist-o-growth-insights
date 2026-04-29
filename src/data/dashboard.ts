@@ -2,127 +2,128 @@
 
 export const baseAnalysis = {
   allMarkets: {
-    customers: 4391,
-    avgTicket: 53.33,
-    avgRecurrence: 3.66,
+    customers: 4520,
+    avgTicket: 65.9442267659671,
+    avgRecurrence: 4.0087331259453752,
   },
   avistao: {
-    customers: 1488,
-    avgTicket: 100.88,
-    avgRecurrence: 1.66,
+    customers: 1496,
+    avgTicket: 100.51658551338258,
+    avgRecurrence: 1.6623931623931624,
   },
 };
 
 export const wallet = {
-  avistaoSpend: 658414.02,
-  totalSpend: 6048810.64,
-  shareValue: 10.89, // %
-  totalTxns: 113419,
-  avistaoTxns: 6527,
-  shareTxns: 5.75,
+  avistaoSpend: 664716.18,
+  totalSpend: 9307976.04,
+  shareValue: 7.14, // %
+  totalTxns: 140775,
+  avistaoTxns: 6613,
+  shareTxns: 4.7,
 };
 
 // Recoverable potential = monthly spend of Avistão customers in competitors
-export const recoverablePotential = 302440.532;
+export const recoverablePotential = 421029.04818181455;
 
+// Top competitors (excluding Avistão itself and "Other / Unclassified")
 export const topCompetitors = [
-  { name: "Supermercado Super Bom", spend: 521833.16, share: 8.63 },
-  { name: "Hortifruti", spend: 252933.35, share: 4.18 },
-  { name: "Multimarket", spend: 235676.68, share: 3.9 },
-  { name: "Supermercado Mancebo", spend: 223212.36, share: 3.69 },
-  { name: "Supermarket", spend: 190543.04, share: 3.15 },
-  { name: "Star Mais Supermercados", spend: 183671.68, share: 3.04 },
-  { name: "Supermercado Ancora", spend: 161194.24, share: 2.66 },
-  { name: "Supermercado Guanabara", spend: 159189.0, share: 2.63 },
-  { name: "Mercado Extra", spend: 141525.54, share: 2.34 },
-  { name: "Lufelana Supermercados", spend: 85589.98, share: 1.41 },
+  { name: "Atacadão", spend: 2509687.1, share: 26.96 },
+  { name: "Supermercado Super Bom", spend: 526097.45, share: 5.65 },
+  { name: "Assaí Atacadista", spend: 270198.19, share: 2.9 },
+  { name: "Hortifruti", spend: 253745.47, share: 2.73 },
+  { name: "Multimarket", spend: 238772.92, share: 2.57 },
+  { name: "Supermercado Mancebo", spend: 224666.81, share: 2.41 },
+  { name: "Supermarket", spend: 194307.17, share: 2.09 },
+  { name: "Star Mais Supermercados", spend: 184458.19, share: 1.98 },
+  { name: "Supermercado Âncora", spend: 162312.21, share: 1.74 },
+  { name: "Supermercado Guanabara", spend: 160200.84, share: 1.72 },
 ];
 
 export const ageDistribution = [
-  { range: "<=20", count: 590 },
-  { range: "21-30", count: 1323 },
-  { range: "31-40", count: 970 },
-  { range: "41-50", count: 772 },
-  { range: "51+", count: 545 },
+  { range: "<=20", count: 607 },
+  { range: "21-30", count: 1359 },
+  { range: "31-40", count: 997 },
+  { range: "41-50", count: 806 },
+  { range: "51+", count: 555 },
 ];
 
-const totalAgeSex = 590 + 1323 + 970 + 772 + 545;
+const totalAgeSex = 607 + 1359 + 997 + 806 + 555;
 
 export const ageSexDistribution = [
   {
     range: "<=20",
-    Feminino: 140,
-    Masculino: 65,
-    Outro: 353,
-    "Não informado": 32,
-    total: 590,
+    Feminino: 147,
+    Masculino: 66,
+    Outro: 359,
+    "Não informado": 35,
+    total: 607,
   },
   {
     range: "21-30",
-    Feminino: 671,
-    Masculino: 305,
-    Outro: 294,
-    "Não informado": 53,
-    total: 1323,
+    Feminino: 691,
+    Masculino: 310,
+    Outro: 302,
+    "Não informado": 56,
+    total: 1359,
   },
   {
     range: "31-40",
-    Feminino: 591,
-    Masculino: 220,
-    Outro: 146,
+    Feminino: 607,
+    Masculino: 227,
+    Outro: 150,
     "Não informado": 13,
-    total: 970,
+    total: 997,
   },
   {
     range: "41-50",
-    Feminino: 482,
-    Masculino: 175,
-    Outro: 107,
+    Feminino: 500,
+    Masculino: 183,
+    Outro: 115,
     "Não informado": 8,
-    total: 772,
+    total: 806,
   },
   {
     range: "51+",
-    Feminino: 347,
+    Feminino: 354,
     Masculino: 118,
-    Outro: 75,
+    Outro: 78,
     "Não informado": 5,
-    total: 545,
+    total: 555,
   },
 ].map((d) => ({ ...d, totalShare: (d.total / totalAgeSex) * 100 }));
 
 export const sexDistribution = [
-  { name: "Feminino", value: 2231 },
-  { name: "Outro", value: 975 },
-  { name: "Masculino", value: 883 },
-  { name: "Não informado", value: 111 },
+  { name: "Feminino", value: 2299 },
+  { name: "Outro", value: 1004 },
+  { name: "Masculino", value: 904 },
+  { name: "Não informado", value: 117 },
 ];
 
 const cityRaw: Array<[string, number]> = [
-  ["RIO DAS OSTRAS", 2627],
-  ["CASIMIRO DE ABREU", 184],
-  ["RIO DE JANEIRO", 273],
-  ["CABO FRIO", 164],
-  ["MACAE", 141],
-  ["DUQUE DE CAXIAS", 74],
-  ["SAO GONCALO", 62],
-  ["CAMPOS DOS GOYTACAZES", 56],
-  ["SAO JOAO DE MERITI", 56],
-  ["NOVA IGUACU", 49],
-  ["BELFORD ROXO", 37],
+  ["RIO DAS OSTRAS", 2712],
+  ["CASIMIRO DE ABREU", 185],
+  ["CABO FRIO", 165],
+  ["MACAE", 145],
+  ["DUQUE DE CAXIAS", 76],
+  ["SAO GONCALO", 63],
+  ["SAO JOAO DE MERITI", 59],
+  ["CAMPOS DOS GOYTACAZES", 58],
+  ["NOVA IGUACU", 53],
+  ["BELFORD ROXO", 39],
   ["NITEROI", 32],
+  ["RIO DE JANEIRO", 280],
   ["MAGE", 23],
   ["NOVA FRIBURGO", 22],
   ["ARMACAO DOS BUZIOS", 20],
-  ["SAO PEDRO DA ALDEIA", 18],
-  ["ITABORAI", 17],
-  ["PETROPOLIS", 14],
+  ["SAO PEDRO DA ALDEIA", 19],
+  ["ITABORAI", 18],
+  ["PETROPOLIS", 15],
   ["ITAPERUNA", 14],
+  ["MESQUITA", 13],
   ["TERESOPOLIS", 12],
-  ["MESQUITA", 12],
 ];
 
-const totalCityCustomers = 4391;
+const totalCityCustomers = 4520;
 
 const formatCityName = (s: string) =>
   s
