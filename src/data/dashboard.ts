@@ -37,8 +37,8 @@ export const topCompetitors = [
   { name: "Star Mais Supermercados", spend: 184458.19, share: 1.98 },
   { name: "Supermercado Âncora", spend: 162312.21, share: 1.74 },
   { name: "Supermercado Guanabara", spend: 160200.84, share: 1.72 },
-  { name: "Supermercado Princesa", spend: 145000.0, share: 1.56 },
-  { name: "Supermercado Costa Azul", spend: 132000.0, share: 1.42 },
+  { name: "Carrefour", spend: 143279.52, share: 1.54 },
+  { name: "Mercado Extra", spend: 142220.15, share: 1.53 },
 ];
 
 export const ageDistribution = [
