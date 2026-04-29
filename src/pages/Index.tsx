@@ -64,6 +64,10 @@ const Index = () => {
           <LocationCard />
         </section>
 
+        <section>
+          <MonthlySpendChart />
+        </section>
+
         <footer className="pt-4 pb-8 text-center text-xs text-muted-foreground">
           Base parcial · Cluster: clientes com ao menos 1 compra em loja mapeada · Avistão Supermercados © {new Date().getFullYear()}
         </footer>
