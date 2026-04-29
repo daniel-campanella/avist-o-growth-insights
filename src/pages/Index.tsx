@@ -6,6 +6,7 @@ import { AgeSexChart } from "@/components/dashboard/AgeSexChart";
 import { SexDonut } from "@/components/dashboard/SexDonut";
 import { LocationCard } from "@/components/dashboard/LocationCard";
 import { RecoverablePotentialCard } from "@/components/dashboard/RecoverablePotentialCard";
+import { MonthlySpendChart } from "@/components/dashboard/MonthlySpendChart";
 
 const Index = () => {
   return (

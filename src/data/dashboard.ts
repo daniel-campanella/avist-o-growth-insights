@@ -150,3 +150,24 @@ export const otherCities = {
   count: totalCityCustomers - top8Sum,
   share: ((totalCityCustomers - top8Sum) / totalCityCustomers) * 100,
 };
+
+export const monthlySpendAvistao: Array<{ month: string; total: number }> = [
+  { month: "Nov/24", total: 790.06 },
+  { month: "Dez/24", total: 5670.4 },
+  { month: "Jan/25", total: 6379.85 },
+  { month: "Fev/25", total: 20794.46 },
+  { month: "Mar/25", total: 26605.46 },
+  { month: "Abr/25", total: 30762.65 },
+  { month: "Mai/25", total: 33982.12 },
+  { month: "Jun/25", total: 38379.11 },
+  { month: "Jul/25", total: 35159.31 },
+  { month: "Ago/25", total: 33690.46 },
+  { month: "Set/25", total: 35433.47 },
+  { month: "Out/25", total: 38237.89 },
+  { month: "Nov/25", total: 30154.41 },
+  { month: "Dez/25", total: 110292.98 },
+  { month: "Jan/26", total: 89751.02 },
+  { month: "Fev/26", total: 62816.02 },
+  { month: "Mar/26", total: 32771.15 },
+  { month: "Abr/26", total: 33045.36 },
+];
