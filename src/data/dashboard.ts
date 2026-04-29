@@ -27,18 +27,21 @@ export const recoverablePotential = 421029.04818181455;
 
 // Top competitors (excluding Avistão itself and "Other / Unclassified")
 export const topCompetitors = [
-  { name: "Atacadão", spend: 2509687.1, share: 26.96 },
-  { name: "Supermercado Super Bom", spend: 526097.45, share: 5.65 },
-  { name: "Assaí Atacadista", spend: 270198.19, share: 2.9 },
-  { name: "Hortifruti", spend: 253745.47, share: 2.73 },
-  { name: "Multimarket", spend: 238772.92, share: 2.57 },
-  { name: "Supermercado Mancebo", spend: 224666.81, share: 2.41 },
-  { name: "Supermarket", spend: 194307.17, share: 2.09 },
-  { name: "Star Mais Supermercados", spend: 184458.19, share: 1.98 },
-  { name: "Supermercado Âncora", spend: 162312.21, share: 1.74 },
-  { name: "Supermercado Guanabara", spend: 160200.84, share: 1.72 },
-  { name: "Carrefour", spend: 143279.52, share: 1.54 },
-  { name: "Mercado Extra", spend: 142220.15, share: 1.53 },
+  { name: "Atacadão", spend: 2511134.45, share: 22.53 },
+  { name: "Supermercado Super Bom", spend: 527146.29, share: 4.73 },
+  { name: "Assaí Atacadista", spend: 270298.27, share: 2.42 },
+  { name: "Hortifruti", spend: 253921.18, share: 2.28 },
+  { name: "Multimarket", spend: 238826.13, share: 2.14 },
+  { name: "Supermercado Princesa", spend: 229131.57, share: 2.06 },
+  { name: "Supermercado Mancebo", spend: 224693.76, share: 2.02 },
+  { name: "Star Mais Supermercados", spend: 201705.12, share: 1.81 },
+  { name: "Supermarket", spend: 194507.96, share: 1.74 },
+  { name: "Supermercado Elshaday", spend: 193844.72, share: 1.74 },
+  { name: "Supermercado Âncora", spend: 162331.21, share: 1.46 },
+  { name: "Supermercado Guanabara", spend: 161138.49, share: 1.45 },
+  { name: "Carrefour", spend: 143279.52, share: 1.29 },
+  { name: "Mercado Extra", spend: 142220.15, share: 1.28 },
+  { name: "Rede Economia", spend: 119401.72, share: 1.07 },
 ];
 
 export const ageDistribution = [
